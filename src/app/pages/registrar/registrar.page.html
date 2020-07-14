@@ -1,0 +1,46 @@
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+
+      <ion-buttons slot="start">
+        <ion-back-button text="Regresar" defaultHref="/">
+        </ion-back-button>
+      </ion-buttons>
+
+      <ion-title>Crear cliente</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen>
+    <form #clienteForm="ngForm">
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        <ion-item>
+          <ion-label position="stacked">Dni <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input id="dni" name="dni" #dni="ngModel"[(ngModel)]="clienteService.selectedCliente.dni" placeholder="Ingrese Dni" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Nombre <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input id="nombre" name="nombre" #dni="ngModel"[(ngModel)]="clienteService.selectedCliente.nombre" placeholder="Ingrese nombre" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Apellido <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input id="apellido" name="apellido" #dni="ngModel"[(ngModel)]="clienteService.selectedCliente.apellido" placeholder="Ingrese apellido" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Telefono <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input id="telefono" name="telefono" #dni="ngModel"[(ngModel)]="clienteService.selectedCliente.telefono" placeholder="Ingrese telefono" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Direccion <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input id="direccion" name="direccion" #dni="ngModel"[(ngModel)]="clienteService.selectedCliente.direccion" placeholder="Ingrese direccion" required></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <div class="ion-padding">
+        <ion-button expand="block" class="ion-no-margin" type="submit" (click)="onSubmit(clienteForm)">Crear cliente</ion-button>
+      </div>
+    </form>
+  </ion-content>
+  <ion-alert-controller></ion-alert-controller>
+</ion-app>

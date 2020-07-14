@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Clientes Ionic
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item-divider color="secondary">
+  <ion-label>
+    Listado de clientes
+  </ion-label>
+</ion-item-divider>
+
+
+<!-- Item Dividers in a List -->
+<ion-list  *ngFor="let cli of clienteList">
+  <ion-item-divider>
+    <ion-label>
+      {{cli.nombre}}  {{cli.apellido}}
+    </ion-label>
+  </ion-item-divider>
+
+  <ion-item ><ion-label>Telefono : {{cli.telefono}}</ion-label></ion-item>
+  <ion-item><ion-label>Dirección : {{cli.direccion}}</ion-label></ion-item>
+
+  
+
+</ion-list>
+
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button routerLink="/registrar" routerDirection="forward">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+</ion-content>
